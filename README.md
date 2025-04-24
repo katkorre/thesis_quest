@@ -1,1 +1,1 @@
-# thesisi_quest
+# thesis_quest
