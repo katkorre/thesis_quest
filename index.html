@@ -223,8 +223,10 @@ In the distant lands of &lt;em&gt;Academia&lt;/em&gt;, a weary human scholar has
 
 Before she can submit it to the Council of Knowledge, she must pay tribute to the brave companions who journeyed with her. Each companion has to give her back a token of recognition of her gratitude. 
 
+&#39;&#39;Tokens collected:&#39;&#39; $tokens
+
 &lt;!-- Display the character&#39;s initial stats --&gt;
-Your journey begins. You have:
+Her journey begins. She has:
 - HP: &lt;&lt;print State.variables.hp&gt;&gt;%
 - Gold: &lt;&lt;print State.variables.gold&gt;&gt;%
 
@@ -253,8 +255,11 @@ Who will she visit first?
 * [[Archmage Barròn, the Advisor]]
 * [[The House of Korrè]]
 * [[The Ortica Inn]]
-* [[The Tiefling Ride-or-Die]]
 * [[The Liminal Institute of Anxiety]]
+* [[Loch Ionis]]
+* [[Strawberry Street]]
+* [[Present yourself to the Counci of Knowledge]]
+
 
 &lt;&lt;script&gt;&gt;
   // Ensure the progress bars are updated when the page is loaded
@@ -280,9 +285,9 @@ She looks around until she spots, patiently staring at a glistening orb, the gla
 &lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="3" name="The House of Korrè" tags="" position="425,300" size="100,100">The labor of authoring the thesis scroll has caused an insumourtable feeling of exhaustion to the little scholar. She decides to take the path towards the House of Korrè, that most often offers a sensation of peace in times of need. There she finds open the healing center and the bank. Where does she go?
 
 * [[Healing center]]
-* [[Rest]]</tw-passagedata><tw-passagedata pid="4" name="The Ortica Inn" tags="" position="550,300" size="100,100">Famished and parched, the weary scholar trudges down the road toward a nearly run-down inn, in search of a refreshing beer. There, unexpectedly, she stumbles upon her three jester friends: the ardent pipe-smoker Isi (D’Oro), the brainiac Dani, and the ever-musical Gianvi. They were drinking pints of beer and they were laughing loudly.
+* [[Bank]]</tw-passagedata><tw-passagedata pid="4" name="The Ortica Inn" tags="" position="550,300" size="100,100">Famished and parched, the Weary Scholar trudges down the road toward a nearly run-down inn, in search of a refreshing beer. There, unexpectedly, she stumbles upon her three jester friends: the ardent pipe-smoker Isi (D’Oro), the brainiac Dani, and the ever-musical Gianvi. They were drinking pints of beer and they were laughing loudly.
 
-Does the weary approach them first or go to get herself a beer and something to eat? 
+Does the Weary Scholar approach them first or does she go to get herself a beer and something to eat? 
 
 
 *  [[Join their company]]
@@ -293,52 +298,83 @@ Does the weary approach them first or go to get herself a beer and something to 
 &lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;
 
 
-</tw-passagedata><tw-passagedata pid="5" name="The Tiefling Ride-or-Die" tags="" position="675,300" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="The Liminal Institute of Anxiety" tags="" position="800,300" size="100,100"></tw-passagedata><tw-passagedata pid="7" name="Yes" tags="" position="25,425" size="100,100">:: Archmage Barròn
+</tw-passagedata><tw-passagedata pid="5" name="The Liminal Institute of Anxiety" tags="" position="675,300" size="100,100">&lt;&lt;set $choice to &quot;&quot;&gt;&gt;
+The scholar, tired to her marrow, stepped through the doorway into the Liminal Institute of Anxiety. The halls were bathed in flickering fluorescent gloom, the air stagnant and heavy.
+Lurking in a corner was a grotesque thing—razored teeth jutting from warped jaws, scales sickly and black and a glistening giant forhead. Lockus Generus, of the genus Piranha de Mala Onda, hissed from the shadows. Its curse hung like a fog: sadness, misanthropy, dread. Everyone here had given up.
 
+The scholar chanted a spell. 
+
+From a crack in the walls came F.R.G., the nerdy wizard with muscles forged from excessive book-lifting.
+
+A.M., the unhinged tiefling with blood-red eyes and a firestarter&#39;s grin, kicked the door open, unleashing a primal punk scream.
+
+Then, swirling in from the skylight, Emancina and Emisina, tiny witches of mirror-magic, twirled like storm petals.
+
+&quot;We end this,&quot; said the scholar.
+
+Choose one focus to carry into the fight:
+
+
+* [[Bag of Roots|Confront Lockus Genericus][$choice = &quot;Bag of Roots&quot;]]
+* [[Jar of Mud|Confront Lockus Genericus][$choice = &quot;Jar of Mud&quot;]]
+* [[Old Book|Confront Lockus Genericus][$choice = &quot;Old Book&quot;]]
+ 
+
+
+</tw-passagedata><tw-passagedata pid="6" name="Yes" tags="" position="25,425" size="100,100">&lt;&lt;if !$gotToken1&gt;&gt;
 She approaches the mighty mage and gently taps him on the back. He silently turns around.
 
-&lt;div class=&quot;archmage-dialogue&quot;&gt;
-  AB: Oh no, what do you want again? Please. I’ve read your scroll five times already. If I had to look at just a word from it again, I’d scream.
-&lt;/div&gt;
+&lt;strong&gt;Archmage Barròn (AB)&lt;/strong&gt;: Oh no, what do you want again? Please. I’ve read your scroll five times already. If I had to look at just a word from it again, I’d scream.
+
 
 She offers a nervous smile.
 
- WS: Archmage Barròn, please, you misunderstood! I just wanted to thank you for your constant advice and endless feedback loops. I also need to obtain a token of gratitude if you deem my gratitude sincere.
+ &lt;strong&gt;Weary Scholar (WS)&lt;/strong&gt;: Archmage Barròn, please, you misunderstood! I just wanted to thank you for your constant advice and endless feedback loops. I also need to obtain a token of gratitude if you deem my gratitude sincere.
 
 
-&lt;div class=&quot;archmage-dialogue&quot;&gt;
-  AB: I see! Well, your gratitude is welcome. You can take this &lt;i&gt;brain-energiser potion machine &lt;/i&gt;. We have a new one in DIT. Now, please, be on your way as I have to check the accuracy of the predictions of this orb.
-&lt;/div&gt;
+ &lt;strong&gt;AB&lt;/strong&gt;: I see! Well, your gratitude is welcome. You can take this &lt;i&gt;brain-energiser potion machine &lt;/i&gt;. We have a new one in DIT. Now, please, be on your way as I have to check the accuracy of the predictions of this orb.
 
 He turned around and mumbled something in a mysterious language that sounded like... Spanish.
 
+&lt;&lt;set $tokens += 1&gt;&gt;
+&lt;&lt;set $gotToken1 = true&gt;&gt;
+You now have $tokens token(s).
+&lt;&lt;else&gt;&gt;
+You&#39;ve already collected the token here.
+&lt;&lt;/if&gt;&gt;
 
-&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="8" name="No" tags="" position="200,475" size="100,100">:: Archmage Barròn
-
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="7" name="No" tags="" position="200,475" size="100,100">&lt;&lt;if !$gotToken1&gt;&gt;
 She swiftly turns on her heel toward the exit, but as she spins, she doesn&#39;t see the ancient bookcase behind her.
 Weathered by centuries and barely holding together, it tips dangerously and nearly crashes down on her, landing with a loud thud and filling the room with 400-year-old dust.
 
 The Archmage slowly turn his gaze and stares at her in a way that could only be described as annoyance. 
 
-WS: I am incredibly sorry! I did not mean to disturb you.
+&lt;strong&gt;Weary Scholar (WS)&lt;/strong&gt;: I am incredibly sorry! I did not mean to disturb you.
 
-&lt;div class=&quot;archmage-dialogue&quot;&gt;
-  AB: Tell me!
-&lt;/div&gt;
+
+&lt;strong&gt;Archmage Barròn  (AB)&lt;/strong&gt;: Tell me!
+
 
 She slowly gets up but starts coughing uncontrollably as the dust started stirring again.
 The Archmage was starring silently. 
 After an amount of attempts to breath normally again that one would only characterize sad, she manages to utter:
 
- WS: Archmage Barròn, I came here give you my thanks for your constant advice and endless feedback loops. I also need to obtain a token of gratitude if you deem my gratitude sincere.
+ &lt;strong&gt;WS&lt;/strong&gt;: Archmage Barròn, I came here give you my thanks for your constant advice and endless feedback loops. I also need to obtain a token of gratitude if you deem my gratitude sincere.
 
-&lt;div class=&quot;archmage-dialogue&quot;&gt;
-  AB: Although you could have had more publications in the Archive of Clerical Language, you did manage to decode my crypted feedback. Take this magic fountain pen as you needed token. You can use it to grade your own apprentices one day. Now, off you go!&lt;/div&gt;
+  &lt;strong&gt;AB&lt;/strong&gt;: Although you could have had more publications in the Archive of Clerical Language, you did manage to decode my crypted feedback. Take this magic fountain pen as you needed token. You can use it to grade your own apprentices one day. Now, off you go!
 
 She diligently took the pen and she went her way to continue her quest! 
 
+&lt;&lt;set $tokens += 1&gt;&gt;
+&lt;&lt;set $gotToken1 = true&gt;&gt;
+You now have $tokens token(s).
+&lt;&lt;else&gt;&gt;
+You&#39;ve already collected the token here.
+&lt;&lt;/if&gt;&gt;
 
-&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="9" name="Join their company" tags="" position="500,675" size="100,100">With a loud, “HEYYY!” she approaches the group.
+
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="8" name="Join their company" tags="" position="500,675" size="100,100">&lt;&lt;if !$gotToken3&gt;&gt;
+With a loud, “HEYYY!” she approaches the group.
 Isi spots her first, lifting his pipe in greeting.
 
 &lt;div class=&quot;isi-dialogue&quot;&gt; &lt;strong&gt;ISI:&lt;/strong&gt; By the smoky beard of Archmage Arkotzi! Where have you been? You’ve missed at least fifty beers these past weeks. &lt;/div&gt;
@@ -355,8 +391,16 @@ Dani grins, raising his glass.
 
 &lt;div class=&quot;isi-dialogue&quot;&gt;“Here”&lt;/div&gt; Isi D’Oro says, reaching under the table.&lt;div class=&quot;isi-dialogue&quot;&gt;A token for your suffering in solitude. It’s enchanted—your beer will never go warm, no matter how long the lecture.”&lt;/div&gt;
 
+&lt;&lt;set $tokens += 1&gt;&gt;
+&lt;&lt;set $gotToken3 = true&gt;&gt;
+You now have $tokens token(s).
+&lt;&lt;else&gt;&gt;
+You&#39;ve already collected the token here.
+&lt;&lt;/if&gt;&gt;
 
-&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="10" name="Go to the bar" tags="" position="625,675" size="100,100">The scholar heads to the bar, eager for a drink, but before she can order, a small, scruffy goblin rushes up beside her, grinning menacingly.
+
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="9" name="Go to the bar" tags="" position="625,675" size="100,100">&lt;&lt;if !$gotToken3&gt;&gt;
+The scholar heads to the bar, eager for a drink, but before she can order, a small, scruffy goblin rushes up beside her, grinning menacingly.
 
 &lt;strong&gt;GOBLIN:&lt;/strong&gt; &quot;Hand over your gold, human!&quot;
 
@@ -390,13 +434,38 @@ WS: &quot;Thank you.&quot;
 
 And so, they continued drinking, laughing, and sharing stories long into the night.
 
-</tw-passagedata><tw-passagedata pid="11" name="Healing center" tags="" position="425,425" size="100,100">Feeling </tw-passagedata><tw-passagedata pid="12" name="Rest" tags="" position="550,425" size="100,100">:: Rest
-You decide to rest and regain some health and gold.
+&lt;&lt;set $tokens += 1&gt;&gt;
+&lt;&lt;set $gotToken3 = true&gt;&gt;
+You now have $tokens token(s).
+&lt;&lt;else&gt;&gt;
+You&#39;ve already collected the token here.
+&lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set State.variables.hp = State.variables.hp + 20&gt;&gt;  &lt;!-- Increase HP by 20% --&gt;
-&lt;&lt;set State.variables.gold = State.variables.gold + 10&gt;&gt;  &lt;!-- Increase Gold by 10 --&gt;
 
-Your HP is now &lt;&lt;print State.variables.hp&gt;&gt;% and you now have &lt;&lt;print State.variables.gold&gt;&gt; gold.
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="10" name="Healing center" tags="" position="425,425" size="100,100">&lt;&lt;if !$gotToken2&gt;&gt;
+Feeling exhausted, she visits the Healing Center.
+A small lady with jet-black hair sits at the front desk and greets the weary scholar with a warm smile.
+
+&lt;strong&gt;Lady&lt;/strong&gt;: How can I help you, dearest?
+
+&lt;strong&gt;Weary Scholar (WS)&lt;/strong&gt;: I’d like something to rejuvenate my health.
+
+The lady nods kindly. Without saying a word, she disappears into a back room behind the counter. Moments later, she returns holding a beautifully ornamented glass filled with ice and a almost transparent, milky-white liquid. The weary scholar detects the distinct scent of anise.
+
+&lt;strong&gt;Lady&lt;/strong&gt;: Try this.
+
+&lt;strong&gt;WS&lt;/strong&gt;: Wow, that’s strong!
+
+But almost instantly, she feels her strength returning, along with a wave of euphoria.
+
+&lt;strong&gt;WS&lt;/strong&gt;: Thank you so much.
+You’re such a kind soul. 
+
+&lt;strong&gt; Lady&lt;/strong&gt;:Here—take this jacket too. You might get cold.
+
+&lt;&lt;set State.variables.hp = State.variables.hp + 20&gt;&gt;  &lt;!-- Increase HP by 50% --&gt;
+
+HP is now &lt;&lt;print State.variables.hp&gt;&gt;
 
 &lt;!-- Update the progress bars after the change --&gt;
 &lt;&lt;script&gt;&gt;
@@ -404,13 +473,70 @@ Your HP is now &lt;&lt;print State.variables.hp&gt;&gt;% and you now have &lt;&l
     $(&quot;#hp-bar&quot;).css(&quot;width&quot;, State.variables.hp + &quot;%&quot;);
     $(&quot;#hp-text&quot;).text(State.variables.hp + &quot;%&quot;);
 
+  });
+&lt;&lt;/script&gt;&gt;
+
+&lt;&lt;set $tokens += 1&gt;&gt;
+&lt;&lt;set $gotToken2 = true&gt;&gt;
+You now have $tokens token(s).
+&lt;&lt;else&gt;&gt;
+You&#39;ve already collected the token here.
+&lt;&lt;/if&gt;&gt;
+
+
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="11" name="Bank" tags="" position="550,425" size="100,100">&lt;&lt;if !$gotToken2&gt;&gt;
+
+The scholar puts her hands in her pockets, her fingers brushing against lint and folded scraps of parchment. A sigh escapes her lips.
+
+Scholars, she reminds herself, don’t choose this life for the money.
+
+Realizing she has little else, she makes her way to the town’s bank, a tall, dusty building with polished brass door.
+
+Inside, the bank clerk—a serious but kind-eyed man in a pressed blue vest—greets her politely.
+
+&lt;strong&gt;Weary Scholar (WS)&lt;/strong&gt;: I’d like to make a withdrawal.
+
+He types her name into acomputer and squints at the screen.
+
+&lt;strong&gt;Clerk&lt;/strong&gt;: I’m sorry, miss... but you have almost nothing in your account.
+
+She gasps but the she forces a smile. 
+
+&lt;strong&gt;WS&lt;/strong&gt;: That sounds about right.
+
+The clerk pauses, studying her tired face and worn robes. Then something shifts in his expression and his eyes became even softer.
+
+&lt;strong&gt;Clerk&lt;/strong&gt;: You remind me of my daughter. She’s studying abroad now—always sends money back home, even when I tell her not to. Says it’s her way of giving thanks. 
+
+He reaches under the counter, pulling out a sealed envelope. With a nod, he slides it across to her.
+
+She opens the envelope. Inside is a modest sum—enough to get by—and a small golden drachma that is very rare to find.
+
+&lt;strong&gt;WS&lt;/strong&gt;: I... I don’t know what to say.
+
+&lt;strong&gt;Clerk&lt;/strong&gt;: Just keep going. 
+
+&lt;&lt;set State.variables.gold = State.variables.gold + 10&gt;&gt;  &lt;!-- Increase Gold by 30 --&gt;
+
+Gold is now &lt;&lt;print State.variables.gold&gt;&gt;.
+
+&lt;!-- Update the progress bars after the change --&gt;
+&lt;&lt;script&gt;&gt;
+  $(document).ready(function() {
     $(&quot;#gold-bar&quot;).css(&quot;width&quot;, State.variables.gold + &quot;%&quot;);
     $(&quot;#gold-text&quot;).text(State.variables.gold + &quot;%&quot;);
   });
 &lt;&lt;/script&gt;&gt;
 
-[[Continue|Start]]
-</tw-passagedata><tw-passagedata pid="13" name="StoryInit" tags="" position="250,725" size="100,100">:: StoryInit
+&lt;&lt;set $tokens += 1&gt;&gt;
+&lt;&lt;set $gotToken2 = true&gt;&gt;
+You now have $tokens token(s).
+&lt;&lt;else&gt;&gt;
+You&#39;ve already collected the token here.
+&lt;&lt;/if&gt;&gt;
+
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="12" name="StoryInit" tags="" position="250,725" size="100,100">:: StoryInit
 &lt;&lt;script&gt;&gt;
   if (State.variables.hp === undefined) {
     State.variables.hp = 50; // Set HP to 50% if not already set
@@ -421,6 +547,203 @@ Your HP is now &lt;&lt;print State.variables.hp&gt;&gt;% and you now have &lt;&l
   }
 &lt;&lt;/script&gt;&gt;
 
+&lt;&lt;set $tokens = 0&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="Confront Lockus Genericus" tags="" position="800,425" size="100,100">Spells flew. Screams echoed. Dark emotions cracked like ice.
+
+F.R.G. shot a gravity orb, pinning the monster. A.M. leapt like a monkey, stabbing into the Lochus&#39;s sorrow-soaked hide. The twins conjured a dome of mirrors, trapping the creature in a prison of its own reflection.
+
+&lt;&lt;if $choice == &quot;Bag of Roots&quot;&gt;&gt;
+The scholar&#39;s roots writhed, shot from the bag, and coiled around the creature. It thrashed—then cracked open like dry wood, and fell to dust.
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $choice == &quot;Jar of Mud&quot;&gt;&gt;
+The scholar hurled the mud. It splattered across the monster’s chest and began to burn. It screamed, staggered, and collapsed into a bubbling heap of lava.
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $choice == &quot;Old Book&quot;&gt;&gt;
+The scholar opened the book. A single phrase glowed on the page. The creature saw it, froze—and crumbled in silence, like a statue abandoned to time.
+&lt;&lt;/if&gt;&gt;
+
+[[Aftermath]]
+</tw-passagedata><tw-passagedata pid="14" name="Aftermath" tags="" position="800,550" size="100,100">&lt;&lt;if !$gotToken4&gt;&gt;
+The air cleared. Light returned. The Institute began to hum—not with sorrow, but with hope.
+
+The friends gathered by the fountain, still laughing.
+
+A.M. shoved a crumpled photo into the scholar&#39;s hands. &quot;For your wall of weird victories.&quot;
+
+In it, they stood shoulder to shoulder: a nerd, a devil, two witches, and a girl.
+
+The scholar smiled. Not weary. Not anymore.
+
+&lt;&lt;set $tokens += 1&gt;&gt;
+&lt;&lt;set $gotToken4 = true&gt;&gt;
+You now have $tokens token(s).
+&lt;&lt;else&gt;&gt;
+You&#39;ve already collected the token here.
+&lt;&lt;/if&gt;&gt;
+
+
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="15" name="Strawberry Street" tags="" position="900,300" size="100,100">The scholar wandered along Strawberry Street, where the air smelled like distant summer.
+
+In a narrow alleyway between a flower shop and a restaurant she saw it: a shimmer in the air, humming softly.
+
+A portal.
+
+Curiosity outweighed caution.
+
+She stepped through.
+
+[[Enter the Portal]]
+</tw-passagedata><tw-passagedata pid="16" name="Enter the Portal" tags="" position="1025,425" size="100,100">The world bent sideways and folded inwards.
+
+She landed, softly, on a warm carpet floor. Books lined the walls. There was a soft couch with a big dalmatian sleeping on it.
+
+And then—he appeared.
+
+&quot;Hey,&quot; he said, grinning. &quot;You&#39;re home.&quot;
+
+He offered a hand. &quot;So... what should we do tonight?&quot;
+
+* [[Bake a cake]]
+* [[Play Super Mario]]
+</tw-passagedata><tw-passagedata pid="17" name="Bake a cake" tags="" position="925,575" size="100,100">&lt;&lt;if !$gotToken5&gt;&gt;
+In the bright kitchen, they baked together. She was cracking the eggs and pouring flour and sugar, while he was mixing everything. Then, together, they stared at the oven hoping that the cake will rise sufficiently. 
+
+The oven glowed warm, and the air filled with the smell of vanilla.
+
+The cake came out perfect. He gave her a slice of cake as a token of gratitude.
+
+They high-fived each other and enjoyed their casual chit-chat with a nice slice of cake.
+
+
+&lt;&lt;set $tokens += 1&gt;&gt;
+&lt;&lt;set $gotToken5 = true&gt;&gt;
+You now have $tokens token(s).
+&lt;&lt;else&gt;&gt;
+You&#39;ve already collected the token here.
+&lt;&lt;/if&gt;&gt;
+
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="18" name="Play Super Mario" tags="" position="1100,550" size="100,100">&lt;&lt;if !$gotToken5&gt;&gt;
+
+They sat close on the couch, controllers in hand. She jumped, missed, laughed. He let her win. Maybe.
+
+The music of the game droned in the background as her head leaned on his shoulder.
+
+Before the getting the final star coin, her eyes fluttered shut.
+
+She drifted into sleep, safe and soft in the quiet hum of the real world. 
+While she was fast asleep, he put a small, real-life star coin in her hand.
+
+&lt;&lt;set $tokens += 1&gt;&gt;
+&lt;&lt;set $gotToken5 = true&gt;&gt;
+You now have $tokens token(s).
+&lt;&lt;else&gt;&gt;
+You&#39;ve already collected the token here.
+&lt;&lt;/if&gt;&gt;
+
+
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="19" name="Loch Ionis" tags="" position="1025,200" size="100,100">The scholar walked past some willow groves and found herself before a still, glowing lake.
+
+&quot;Loch Ionis&quot; she whispered, unsure. 
+
+There, floating on the foggy surface, waited an archivist with ink-stained robes.
+
+
+[[Continue|Archivist Meeting]]</tw-passagedata><tw-passagedata pid="20" name="Archivist Meeting" tags="" position="1150,325" size="100,100">The scholar approached the Archivist.
+
+&quot;I reconstruct ancient scriptures&quot;, he said, barely looking up from the glowing scroll hovering in front of him. &quot;It&#39;s a lovely work&quot;.
+
+A bottle floated toward them. &quot;Care for a sip of Ambrosyx? A mythical spirit. Glows in the dark &quot;.
+
+He paused.
+
+&quot;Or... we could skip the chaos and just dive into ideas. I’ve had a week of translating cursed funeral rites. My brain’s ready to explode.&quot;
+
+What do you do?
+
+* [[Share a drink|Drink Together]]
+* [[Brainstorm instead|Brainstorming Ideas]]
+</tw-passagedata><tw-passagedata pid="21" name="Drink Together" tags="" position="975,700" size="100,100">&quot;Let me tell you a cautionary tale&quot;, he began, swirling the glowing liquid.  
+&quot;Once, I drank *way* too much Ambrosyx at a midnight ritual. Thought I could still teleport home—&quot;
+
+He paused.
+
+&quot;But I was too drunk. Couldn&#39;t even hold the sigil pattern in my head. So I walked.&quot;
+
+The scholar raised a brow.
+
+&quot;Five miles. In robes. With a satchel full of ancient scripture fragments. At some point I was chased by wild dogs&quot;.
+
+He took another sip.
+
+&quot;Don&#39;t drink and spell, kid&quot;. 
+
+[[Maybe there is a gift for you..]]
+
+
+
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="22" name="Brainstorming Ideas" tags="" position="1100,700" size="100,100">They skipped the drink and lit floating lanterns above the water.
+
+“Maybe there’s a language embedded in music—an ancient form of communication preserved through sound”.
+
+“What if early languages were built like recursive poetry, where meaning unfolds through repetition and structure?”
+
+“What if the world around us is a palimpsest—layer upon layer of overwritten languages and forgotten systems?”
+
+They debated theories and visualized patterns.
+
+In that moment, the scholar realized the real joy wasn’t in solving the puzzle, but in the process: the act of uncovering, preserving, and making sense of what had nearly been lost. Archiving, then, wasn’t about storage—it was about building bridges across time.
+
+[[Maybe there is a gift for you..]]
+
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="23" name="Maybe there is a gift for you.." tags="" position="1050,825" size="100,100">&lt;&lt;if !$gotToken6&gt;&gt;
+
+The Archivist hands the scholar a tiny scrap of parchment.  
+
+&quot;Try this&quot;. He says, smiling.
+
+You read the strange words aloud: &#39;&#39;Verum sonat in omni lingua. Audire est intelligere&#39;&#39;.
+
+The room hums. Suddenly, the scrolls around you—Sumerian, Phoenician, lost tongues—become clear. The scholar understands them all.
+
+The Archivist chuckles. &quot;It’s not magic. Just a reminder: understanding comes from curiosity.&quot;
+
+&lt;&lt;set $tokens += 1&gt;&gt;
+&lt;&lt;set $gotToken6 = true&gt;&gt;
+You now have $tokens token(s).
+&lt;&lt;else&gt;&gt;
+You&#39;ve already collected the token here.
+&lt;&lt;/if&gt;&gt;
+
+
+The scholar, happy with this new-found ability, goes back to the starting place. 
+
+&lt;span class=&quot;yellow-link&quot;&gt;[[Return to the Beginning-&gt;Start]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="24" name="Present yourself to the Counci of Knowledge" tags="" position="775,825" size="100,100">&lt;&lt;if $tokens &gt;= 5&gt;&gt;
+
+The scholar approaches the Council of Knowledge, standing before three imposing figures.
+
+She says,
+&quot;I come before you with my tokens of gratitude, gathered by all my people—beloved and cherished. I hope you deem them worthy&quot;.
+
+The council members exchange skeptical glances.
+
+The one seated in the center rises, takes two steps forward, and announces:
+&quot;Your quest and the submission of this scroll are accepted. You are now a true scholar&quot;.
+
+&lt;&lt;button &quot;Restart the journey&quot;&gt;&gt;
+  &lt;&lt;run Engine.restart()&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+
+
+&lt;&lt;else&gt;&gt;
+The scholar needs to travel a bit more. Maybe she hasn&#39;t found all the tokens yet.
+
+&lt;&lt;link &quot;Keep exploring&quot;&gt;&gt;
+  &lt;&lt;goto &quot;Start&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 </tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
